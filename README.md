@@ -133,6 +133,9 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 | Apogee-Impose-Trick\_Automatic-Page-Numbering | 4 | 4 | 4 | 4 | 3 | 4 | 3 | 4 | 3.75 | — |
 | Apogee-Impose-Trick\_Folding-Direction-Arrow | 3 | 4 | 4 | 4 | **2** | 3 | 3 | 4 | 3.38 | ⚠ C5: fold arrow meaning is image-only |
 | Apogee-InkDrive-Trick\_Accurate-CIP3-Presets | 3 | 4 | 4 | 4 | 3 | 3 | 3 | 4 | 3.50 | — |
+| ProductionCenter\_UG\_14.0\_en-US | 5 | 3 | 4 | 5 | 4 | 5 | 3 | 3 | 4.00 | — |
+
+> The ProductionCenter User Guide is the top scorer so far (avg 4.00). It has 12 numbered chapters, a full glossary, and text-complete procedures — basically the gold standard for what a RAG-ready document looks like. The only soft spots are self-containment (C2=3) and chunk-friendliness (C8=3), which are unavoidable in a 260-page reference guide that naturally cross-references itself. If your document scores lower than this one, it needs work.
 
 **Steps to complete:**
 1. Open `doc_readiness_checklist.xlsx` → **Readiness Checklist** sheet
