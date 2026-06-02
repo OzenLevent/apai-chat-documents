@@ -13,7 +13,7 @@ This repository tracks the documents uploaded to the **APAI Chat** knowledge bas
 ## Summary (as of 2026-06-02)
 
 - **79 documents** currently uploaded to the APAI Chat site
-- All documents in `documents_uploaded_v2.xlsx` match the site
+- All documents in `documents_uploaded_v2.xlsx` match the site (Service Manuals not yet uploaded)
 - Audience fields split into separate columns in the comparison file
 - Site document status tracked: COMPLETED / PARTIALLY\_COMPLETED / FAILED
 
@@ -24,4 +24,3 @@ This repository tracks the documents uploaded to the **APAI Chat** knowledge bas
 - Technical Notes – Proofing v14
 - QMS Tutorials
 - Reference Guides & Online Help
-- Service Manuals
