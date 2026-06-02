@@ -6,14 +6,16 @@ This repository supports the **APAI Chat** AI assistant at [eqap.ac.eco3sw.com](
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| `documents_uploaded.xlsx` | Initial document tracking list – current site state (June 2026) |
-| `documents_vs_site_comparison.xlsx` | Side-by-side comparison of site documents vs. tracking list |
-| `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 5 samples scored (auto) · 24 sampled docs selected · all 79 docs (auto) |
-| `ai-testing-evaluation-plan.md` | AI Testing & Evaluation Plan v1.4 – full test methodology reference |
+| File | Description | Last Updated |
+|------|-------------|--------------|
+| `documents_uploaded.xlsx` | Initial document tracking list – current site state (June 2026) | 2026-06-03 |
+| `documents_vs_site_comparison.xlsx` | Side-by-side comparison of site documents vs. tracking list | 2026-06-03 |
+| `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 5 samples scored (auto) · 24 sampled docs selected · all 79 docs (auto) | 2026-06-03 |
+| `ai-testing-evaluation-plan.md` | AI Testing & Evaluation Plan v1.4 – full test methodology reference | 2026-06-02 |
 
 > **Versioning reminder:** When regenerating comparison or checklist files, add a version or date suffix (e.g. `_v2` or `_2026-07-01`) and update the file table above.
+>
+> **Update reminder:** Each time any file in this table is changed, update its **Last Updated** date here and commit.
 
 ---
 
