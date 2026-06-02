@@ -150,59 +150,66 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 
 ---
 
-### 3. Question & Answer Dataset — Build, Validate, and Export
+### 3. Question & Answer Dataset — Build, Test, and Validate
 
-For each sampled document, generate questions per section based on the document content, validate each question-answer pair against the source document, and export the results as the gold-standard test dataset for Phase 2 of the AI Testing & Evaluation Plan.
+The purpose of this task is to test the quality of APAI Chat's answers against a set of reference questions drawn directly from the uploaded documents.
 
-**Output file:** `qa_dataset.xlsx` (or `qa_dataset_YYYY-MM-DD.xlsx` for versioned runs)
+**How it works:**
+1. Questions are generated from each sampled document and a reference answer is written from the source text
+2. Each question is asked to APAI Chat at [eqap.ac.eco3sw.com](https://eqap.ac.eco3sw.com)
+3. The AI's response is recorded and compared against the reference answer
+4. The result is marked as Pass or Fail accordingly
 
-**Question types to generate** (per Section 6 of AI Testing & Evaluation Plan):
+**Current test file:** `qa_test.xlsx` — one sheet per scored document, 72 questions total
 
-| Type | Route | Example pattern |
-|------|-------|-----------------|
-| Definition | DEFINITION | "What is \[term\]?" / "What does \[feature\] do?" |
-| How-To | HOW\_TO | "How do I \[action\]?" / "What are the steps to \[procedure\]?" |
-| Comparison | COMPARISON | "What is the difference between \[X\] and \[Y\]?" |
-| Troubleshooting | TROUBLESHOOTING | "Why does \[error/symptom\] occur?" / "How do I fix \[issue\]?" |
-| General | OTHER | Broad questions covered by the document |
+**Question types used** (per Section 6 of AI Testing & Evaluation Plan):
 
-**Output file structure — `qa_dataset.xlsx`:**
+| Type | Example pattern |
+|------|-----------------|
+| DEFINITION | "What is \[term\]?" / "What does \[feature\] do?" |
+| HOW\_TO | "How do I \[action\]?" / "What are the steps to \[procedure\]?" |
+| COMPARISON | "What is the difference between \[X\] and \[Y\]?" |
+| TROUBLESHOOTING | "Why does \[error/symptom\] occur?" / "How do I fix \[issue\]?" |
+| OTHER | Broad questions covered by the document |
 
-| Column | Description |
-|--------|-------------|
-| ID | Unique identifier (e.g. `TEST-001`) |
-| Document | Source document name |
-| Section | Section or heading within the document |
-| Question | The generated question |
+**Column structure — `qa_test.xlsx`:**
+
+| Column | Purpose |
+|--------|---------|
+| ID | Unique question identifier per document (e.g. `PC-001`, `AP-IMP-001`) |
+| Section / Page | Chapter, section heading, and page number where the answer is found in the source document |
+| Question | The question to be asked to APAI Chat |
 | Question Type | DEFINITION / HOW\_TO / COMPARISON / TROUBLESHOOTING / OTHER |
-| Difficulty | Easy / Medium / Hard |
-| Gold Passage | Verbatim quoted text from the document that answers the question |
-| Reference Answer | Short expected answer |
-| Answerable | Yes / No |
-| Should Refuse | Yes / No |
-| Refuse Reason | PRICING / OUT\_OF\_SCOPE / PII / (blank) |
-| Validated | Yes / No / Partial |
-| Validation Notes | Any issues found during validation against source document |
+| Difficulty | Easy / Medium / Hard — indicates how specific or complex the answer is expected to be |
+| Reference Answer (Expected Answer) | The expected correct answer, written verbatim or near-verbatim from the source document |
+| Validated (Source) | `Yes` for all rows — confirms the reference answer was verified against the source document text before use |
+| APAI-Chat Answer | **Team fills this in** — paste the exact response received from APAI Chat for this question |
+| Validated (APAI) | **Team fills this in** — `Yes` if the APAI Chat answer matches the reference answer, `No` if it does not, `Partial` if the answer is incomplete or partially correct |
+| Pass / Fail | **Team fills this in** — `Pass` if Validated (APAI) = Yes, `Fail` if No or Partial |
 
-**Steps:**
-1. For each document in the **Readiness Checklist** sample:
-   - Read each section heading
-   - Generate 2–5 questions per section covering the question types above
-   - Quote the exact passage from the document that answers each question (Gold Passage)
-   - Write a short reference answer
-2. Validate each question-answer pair:
-   - Confirm the gold passage exists verbatim in the source document
-   - Confirm the reference answer is consistent with the gold passage
-   - Mark `Validated = Yes / No / Partial` accordingly
-3. Export to `qa_dataset.xlsx`
-4. Version-stamp when re-run (e.g. `qa_dataset_v2.xlsx`)
-5. Update this README (file table, summary count)
-6. Commit and push
+**Steps to run a test cycle:**
+1. Open `qa_test.xlsx` and select a sheet (document)
+2. For each row, copy the **Question** and ask it to APAI Chat at [eqap.ac.eco3sw.com](https://eqap.ac.eco3sw.com)
+3. Paste the AI's response into the **APAI-Chat Answer** column
+4. Compare the response against the **Reference Answer (Expected Answer)**
+5. Fill in **Validated (APAI)**: `Yes` / `No` / `Partial`
+6. Fill in **Pass / Fail**: `Pass` if Yes, `Fail` if No or Partial
+7. When a sheet is complete, save with a date suffix (e.g. `qa_test_2026-06-10.xlsx`) and commit
+
+**Sheets in `qa_test.xlsx`:**
+
+| Sheet | Document | Questions |
+|-------|----------|-----------|
+| Impose - Auto Page Numbering | Apogee-Impose-Trick\_Automatic-Page-Numbering | 5 |
+| Impose - Folding Arrow | Apogee-Impose-Trick\_Folding-Direction-Arrow | 4 |
+| InkDrive - CIP3 Presets | Apogee-InkDrive-Trick\_Accurate-CIP3-Presets | 5 |
+| ProductionCenter UG | ProductionCenter\_UG\_14.0\_en-US | 58 |
+| **Total** | | **72** |
 
 **Pending items:**
-- [ ] Complete readiness scoring (Task 2) before generating questions — documents scoring ≤ 2 should be remediated first
-- [ ] Generate Q&A for all 24 sampled documents
-- [ ] Second-person review of each validated pair before use in testing
+- [ ] Run test cycle — ask all 72 questions to APAI Chat and record answers
+- [ ] Complete readiness scoring for remaining 20 sample documents
+- [ ] Expand `qa_test.xlsx` with questions for all 24 sampled documents
 
 ---
 
