@@ -12,6 +12,7 @@ This repository supports the **APAI Chat** AI assistant at [eqap.ac.eco3sw.com](
 | `documents_vs_site_comparison.xlsx` | Side-by-side comparison of site documents vs. tracking list | 2026-06-03 |
 | `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 4 samples scored (auto) · 24 sampled docs selected · all 79 docs (auto) | 2026-06-03 |
 | `ai-testing-evaluation-plan.md` | AI Testing & Evaluation Plan v1.4 – full test methodology reference | 2026-06-02 |
+| `qa_test.xlsx` | Test Q&A dataset – 4 sheets (one per scored document) · 72 questions total · 58 from ProductionCenter UG | 2026-06-03 |
 
 > **Versioning reminder:** When regenerating comparison or checklist files, add a version or date suffix (e.g. `_v2` or `_2026-07-01`) and update the file table above.
 >
