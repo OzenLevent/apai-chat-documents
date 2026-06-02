@@ -106,10 +106,38 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 | 23 | PRODUCTION\_CENTER | User Guide | 14.0 | ProductionCenter\_UG\_14.0\_en-US |
 | 24 | PRODUCTION\_CENTER | Tutorial | 14.0 | Approve and reject pages |
 
+**How to score each criterion:**
+
+**1. Structural Clarity** — Look at the heading structure. Does the document have a clear title, section headings, and a logical flow? A score of 4–5 means headings are present and the document is easy to navigate. Score 3 if there is only one heading or content is a single block of text. Score 1–2 if there are no headings at all.
+
+**2. Self-Containment** — Can you read a single section and understand it without reading the rest of the document or a different document? Tips & Tricks and standalone tutorials typically score 4–5. Chapters from a larger reference guide that assume prior sections may score 2–3.
+
+**3. Explicit Context** — Is the product name, software version, and any prerequisite clearly stated? Check the header or introduction. If version and product are stated at the top and referenced within sections, score 4–5. If a reader would not know which product or version applies, score 1–2.
+
+**4. Terminology Consistency** — Pick 3–5 key technical terms and check whether they are used the same way throughout. Inconsistent synonyms (e.g. "Press Sheet" vs "sheet" vs "imposition sheet" used interchangeably without definition) lower the score.
+
+**5. Text / Image Ratio** — Read only the text (or the converted .txt file). Does the text alone convey the key information? If a procedure step says "see the arrow" or "notice the difference" and the meaning is only in an image, score 2. If all critical instructions are written out in text (images are supplementary), score 4–5.
+
+**6. Procedure Clarity** — Are steps numbered, in order, and complete? Check for: numbered list, one action per step, any warnings or notes included inline. A document with no steps (conceptual only) scores 3 by default — not a weakness, just not applicable. Score 1–2 only if steps exist but are ambiguous or out of order.
+
+**7. Error / Troubleshooting Proximity** — When the document mentions an error, symptom, or failure condition, is the resolution in the same section or on the same page? If the document has no troubleshooting content at all, score 3 (neutral). Score 4–5 only if symptoms and fixes are clearly paired.
+
+**8. Chunk-Friendliness** — Imagine copying ~375 words (~half a page) from a random location in the document and showing it to the AI with no other context. Does that excerpt make sense on its own? Short documents (1–2 pages) almost always score 4–5. Long reference guides with dense cross-references may score 2–3.
+
+> **Flag rule:** Any criterion scoring ≤ 2 must have a Priority Action entry explaining what needs to change before the document is suitable for RAG ingestion.
+
+**Worked examples (scored 2026-06-03):**
+
+| Document | C1 | C2 | C3 | C4 | C5 | C6 | C7 | C8 | Avg | Flag |
+|----------|----|----|----|----|----|----|----|----|-----|------|
+| Apogee-Impose-Trick\_Automatic-Page-Numbering | 4 | 4 | 4 | 4 | 3 | 4 | 3 | 4 | 3.75 | — |
+| Apogee-Impose-Trick\_Folding-Direction-Arrow | 3 | 4 | 4 | 4 | **2** | 3 | 3 | 4 | 3.38 | ⚠ C5: fold arrow meaning is image-only |
+| Apogee-InkDrive-Trick\_Accurate-CIP3-Presets | 3 | 4 | 4 | 4 | 3 | 3 | 3 | 4 | 3.50 | — |
+
 **Steps to complete:**
 1. Open `doc_readiness_checklist.xlsx` → **Readiness Checklist** sheet
-2. For each sample row, open the corresponding PDF
-3. Score each of the 8 criteria (1–5) based on the definitions above
+2. For each sample row, convert the PDF to `.txt` using `pdftotext -layout` (MiKTeX provides this at `miktex\bin\x64\pdftotext.exe`)
+3. Read the `.txt` file and score each of the 8 criteria (1–5) using the guidance above
 4. Fill in the **Priority Action** column for any criterion scoring ≤ 2
 5. When re-run, save with a version/date suffix and update the file table above
 6. Commit and push
