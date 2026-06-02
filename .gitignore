@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# Track Excel workbooks
+!*.xlsx
+
+# Track Markdown files
+!*.md
+
+# Always track .gitignore itself
+!.gitignore
