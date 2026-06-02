@@ -7,7 +7,7 @@ This repository tracks the documents uploaded to the **APAI Chat** knowledge bas
 | File | Description |
 |------|-------------|
 | `documents_uploaded.xlsx` | Initial document tracking list – current site state (June 2026) |
-| `documents_comparison_2026-06-02.xlsx` | Side-by-side comparison of site documents vs. tracking list |
+| `documents_vs_site_comparison.xlsx` | Side-by-side comparison of site documents vs. tracking list |
 
 ## Summary (as of 2026-06-02)
 
