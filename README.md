@@ -184,16 +184,16 @@ The purpose of this task is to test the quality of APAI Chat's answers against a
 | Reference Answer (Expected Answer) | The expected correct answer, written verbatim or near-verbatim from the source document |
 | Validated (Source) | `Yes` for all rows — confirms the reference answer was verified against the source document text before use |
 | APAI-Chat Answer | **Team fills this in** — paste the exact response received from APAI Chat for this question |
-| Validated (APAI) | **Team fills this in** — `Yes` if the APAI Chat answer matches the reference answer, `No` if it does not, `Partial` if the answer is incomplete or partially correct |
-| Pass / Fail | **Team fills this in** — `Pass` if Validated (APAI) = Yes, `Fail` if No or Partial |
+| Pass / Fail | **Team fills this in** — `Pass` if the APAI Chat answer matches the reference answer, `Fail` if it does not or is incomplete |
+| Remarks | **Team fills this in** — optional notes, e.g. "answer was correct but incomplete", "AI referenced wrong version", "AI refused to answer" |
 
 **Steps to run a test cycle:**
 1. Open `qa_test.xlsx` and select a sheet (document)
 2. For each row, copy the **Question** and ask it to APAI Chat at [eqap.ac.eco3sw.com](https://eqap.ac.eco3sw.com)
 3. Paste the AI's response into the **APAI-Chat Answer** column
 4. Compare the response against the **Reference Answer (Expected Answer)**
-5. Fill in **Validated (APAI)**: `Yes` / `No` / `Partial`
-6. Fill in **Pass / Fail**: `Pass` if Yes, `Fail` if No or Partial
+5. Fill in **Pass / Fail**: `Pass` if the answer is correct, `Fail` if it is wrong or incomplete
+6. Add any notes in the **Remarks** column if needed
 7. When a sheet is complete, save with a date suffix (e.g. `qa_test_2026-06-10.xlsx`) and commit
 
 **Sheets in `qa_test.xlsx`:**
