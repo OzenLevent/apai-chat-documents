@@ -7,5 +7,8 @@
 # Track Markdown files
 !*.md
 
+# Track HTML files (dashboard)
+!*.html
+
 # Always track .gitignore itself
 !.gitignore
