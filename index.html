@@ -321,12 +321,19 @@
   </div>
 
   <!-- ── CHARTS ROW ── -->
-  <div style="margin-bottom:32px;">
+  <div class="grid-2">
 
     <div class="card">
       <h2>Readiness Scoring — Criteria Scores per Document</h2>
       <div class="chart-wrap" style="height:280px;">
         <canvas id="chartSamples"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Q&A Questions by Document</h2>
+      <div class="chart-wrap">
+        <canvas id="chartQA"></canvas>
       </div>
     </div>
 
@@ -598,6 +605,42 @@
     }
   });
 
+  // ── Chart 2: Horizontal bar – Q&A questions per sheet ──
+  new Chart(document.getElementById('chartQA'), {
+    type: 'bar',
+    data: {
+      labels: [
+        'ProductionCenter UG',
+        'InkDrive – CIP3 Presets',
+        'Impose – Auto Page Numbering',
+        'Impose – Folding Arrow'
+      ],
+      datasets: [{
+        label: 'Questions',
+        data: [58, 5, 5, 4],
+        backgroundColor: [teal, teal2, teal2, teal2],
+        borderRadius: 5,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.x} questions` } }
+      },
+      scales: {
+        x: {
+          grid: { color: '#f0f0f0' },
+          ticks: { font: { size: 11 } }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { size: 11 } }
+        }
+      }
+    }
+  });
 </script>
 
 </body>
