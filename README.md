@@ -12,7 +12,7 @@ This repository supports the **APAI Chat** AI assistant at [eqap.ac.eco3sw.com](
 | `documents_vs_site_comparison.xlsx` | Side-by-side comparison of site documents vs. tracking list | 2026-06-03 |
 | `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 4 samples scored (auto) · 24 sampled docs selected · all 79 docs (auto) | 2026-06-03 |
 | `ai-testing-evaluation-plan.md` | AI Testing & Evaluation Plan v1.4 – full test methodology reference | 2026-06-02 |
-| `qa_test.xlsx` | Test Q&A dataset – 4 sheets (one per scored document) · 72 questions total · 58 from ProductionCenter UG · **9 questions tested (2 sheets complete)** | 2026-06-03 |
+| `qa_test.xlsx` | Test Q&A dataset – 4 sheets (one per scored document) · 72 questions total · 58 from ProductionCenter UG · **72 questions tested (4 sheets complete · 46 Pass / 26 Fail · 64%)** | 2026-06-03 |
 
 > **Versioning reminder:** When regenerating comparison or checklist files, add a version or date suffix (e.g. `_v2` or `_2026-07-01`) and update the file table above.
 >
@@ -204,12 +204,11 @@ The purpose of this task is to test the quality of APAI Chat's answers against a
 |-------|----------|-----------|--------|------|------|-------|
 | Impose - Auto Page Numbering | Apogee-Impose-Trick\_Automatic-Page-Numbering | 5 | ✅ Yes | 2 | 3 | 40% |
 | Impose - Folding Arrow | Apogee-Impose-Trick\_Folding-Direction-Arrow | 4 | ✅ Yes | 3 | 1 | 75% |
-| InkDrive - CIP3 Presets | Apogee-InkDrive-Trick\_Accurate-CIP3-Presets | 5 | — | — | — | — |
-| ProductionCenter UG | ProductionCenter\_UG\_14.0\_en-US | 58 | — | — | — | — |
-| **Total** | | **72** | **9** | **5** | **4** | **56%** |
+| InkDrive - CIP3 Presets | Apogee-InkDrive-Trick\_Accurate-CIP3-Presets | 5 | ✅ Yes | 3 | 2 | 60% |
+| ProductionCenter UG | ProductionCenter\_UG\_14.0\_en-US | 58 | ✅ Yes | 38 | 20 | 66% |
+| **Total** | | **72** | **72** | **46** | **26** | **64%** |
 
 **Pending items:**
-- [ ] Run test cycle — ask remaining 63 questions (InkDrive - CIP3 Presets, ProductionCenter UG)
 - [ ] Complete readiness scoring for remaining 20 sample documents
 - [ ] Expand `qa_test.xlsx` with questions for all 24 sampled documents
 
