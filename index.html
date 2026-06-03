@@ -268,8 +268,8 @@
   <div class="grid-2">
 
     <div class="card">
-      <h2>Readiness Scoring — Sample Progress</h2>
-      <div class="chart-wrap">
+      <h2>Readiness Scoring — Criteria Scores per Document</h2>
+      <div class="chart-wrap" style="height:280px;">
         <canvas id="chartSamples"></canvas>
       </div>
     </div>
@@ -386,41 +386,68 @@
   const gray   = '#e9ecef';
   const orange = '#e67e22';
 
-  // ── Chart 1: Donut – sample scoring progress ──
+  // ── Chart 1: Radar – criteria scores per document ──
   new Chart(document.getElementById('chartSamples'), {
-    type: 'doughnut',
+    type: 'radar',
     data: {
-      labels: ['Scored (auto)', 'Remaining'],
-      datasets: [{
-        data: [4, 20],
-        backgroundColor: [teal, gray],
-        borderWidth: 0,
-        hoverOffset: 6
-      }]
+      labels: ['C1 Structural', 'C2 Self-Contain', 'C3 Context', 'C4 Terminology', 'C5 Text/Image', 'C6 Procedure', 'C7 Error Prox.', 'C8 Chunk'],
+      datasets: [
+        {
+          label: 'Auto Page Numbering',
+          data: [4, 4, 4, 4, 3, 4, 3, 4],
+          borderColor: teal,
+          backgroundColor: 'rgba(31,107,117,0.12)',
+          pointBackgroundColor: teal,
+          borderWidth: 2,
+          pointRadius: 3
+        },
+        {
+          label: 'Folding Arrow',
+          data: [3, 4, 4, 4, 2, 3, 3, 4],
+          borderColor: orange,
+          backgroundColor: 'rgba(230,126,34,0.10)',
+          pointBackgroundColor: orange,
+          borderWidth: 2,
+          pointRadius: 3
+        },
+        {
+          label: 'CIP3 Presets',
+          data: [3, 4, 4, 4, 3, 3, 3, 4],
+          borderColor: teal2,
+          backgroundColor: 'rgba(46,172,186,0.10)',
+          pointBackgroundColor: teal2,
+          borderWidth: 2,
+          pointRadius: 3
+        },
+        {
+          label: 'ProductionCenter UG',
+          data: [5, 3, 4, 5, 4, 5, 3, 3],
+          borderColor: '#7030A0',
+          backgroundColor: 'rgba(112,48,160,0.10)',
+          pointBackgroundColor: '#7030A0',
+          borderWidth: 2,
+          pointRadius: 3
+        }
+      ]
     },
     options: {
-      cutout: '68%',
+      scales: {
+        r: {
+          min: 0,
+          max: 5,
+          ticks: { stepSize: 1, font: { size: 10 }, backdropColor: 'transparent' },
+          pointLabels: { font: { size: 10 } },
+          grid: { color: '#e0e0e0' },
+          angleLines: { color: '#e0e0e0' }
+        }
+      },
       plugins: {
-        legend: { position: 'bottom', labels: { font: { size: 12 }, padding: 16 } },
-        tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed} documents` } }
+        legend: {
+          position: 'bottom',
+          labels: { font: { size: 11 }, padding: 12, boxWidth: 12 }
+        }
       }
-    },
-    plugins: [{
-      id: 'centerText',
-      beforeDraw(chart) {
-        const { width, height, ctx } = chart;
-        ctx.save();
-        ctx.font = `700 28px 'Segoe UI', Arial`;
-        ctx.fillStyle = teal;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('4 / 24', width / 2, height / 2 - 10);
-        ctx.font = `400 11px 'Segoe UI', Arial`;
-        ctx.fillStyle = '#95a5a6';
-        ctx.fillText('samples scored', width / 2, height / 2 + 16);
-        ctx.restore();
-      }
-    }]
+    }
   });
 
   // ── Chart 2: Horizontal bar – Q&A questions per sheet ──
