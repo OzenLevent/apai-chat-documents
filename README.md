@@ -98,7 +98,7 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 | 12 | PREPRESS | Reference Guide (QMS) | 14.0 | Apogee Prepress\_QMS\_OLH |
 | 13 | PREPRESS | Tutorial | 14.0 | Basic Administrative Tasks |
 | 14 | PREPRESS | Tutorial – Impose | 14.0 | Lesson 26 - Number-Up Cut and Assemble |
-| 15 | PREPRESS | Technical Note | 14.0 | TN Apogee Prepress 14 - Custom Media advanced mode |
+| 15 | PREPRESS | Technical Note | 14.0 | TN Apogee Prepress 14 - settings and troubleshooting |
 | 16 | PREPRESS | Tutorial – QMS | 14.0 | QMS-Check-and-Double-Check |
 | 17 | PREPRESS | Tutorial – Proofing | 14.0 | Proofing-Contract-Proofing |
 | 18 | PREPRESS | Tutorial | 15.0 | Advanced Job Management |
