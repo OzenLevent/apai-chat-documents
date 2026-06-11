@@ -10,7 +10,7 @@ This repository supports the **APAI Chat** AI assistant at [eqap.ac.eco3sw.com](
 |------|-------------|--------------|
 | `documents_uploaded.xlsx` | Initial document tracking list – current site state (June 2026) | 2026-06-03 |
 | `documents_vs_site_comparison.xlsx` | Side-by-side comparison of site documents vs. tracking list | 2026-06-03 |
-| `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 4 samples scored (auto) · 24 sampled docs selected · all 79 docs (auto) | 2026-06-03 |
+| `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 14 samples scored · 24 sampled docs selected · all 79 docs (auto) | 2026-06-11 |
 | `ai-testing-evaluation-plan.md` | AI Testing & Evaluation Plan v1.4 – full test methodology reference | 2026-06-02 |
 | `qa_test.xlsx` | Test Q&A dataset – 4 sheets (one per scored document) · 72 questions total · 58 from ProductionCenter UG · **72 questions tested (4 sheets complete · 46 Pass / 26 Fail · 64%)** | 2026-06-03 |
 
@@ -129,7 +129,7 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 
 > **Flag rule:** Any criterion scoring ≤ 2 must have a Priority Action entry explaining what needs to change before the document is suitable for RAG ingestion.
 
-**Worked examples (scored 2026-06-03):**
+**Worked examples (scored as of 2026-06-11):**
 
 | Document | C1 | C2 | C3 | C4 | C5 | C6 | C7 | C8 | Avg | Flag |
 |----------|----|----|----|----|----|----|----|----|-----|------|
@@ -137,8 +137,18 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 | Apogee-Impose-Trick\_Folding-Direction-Arrow | 3 | 4 | 4 | 4 | **2** | 3 | 3 | 4 | 3.38 | ⚠ C5: fold arrow meaning is image-only |
 | Apogee-InkDrive-Trick\_Accurate-CIP3-Presets | 3 | 4 | 4 | 4 | 3 | 3 | 3 | 4 | 3.50 | — |
 | ProductionCenter\_UG\_14.0\_en-US | 5 | 3 | 4 | 5 | 4 | 5 | 3 | 3 | 4.00 | — |
+| Apogee-Trick\_Apogee-DQS | 3 | 4 | 4 | 4 | 5 | **2** | **2** | 4 | 3.50 | ⚠ C6: no steps. C7: no troubleshooting |
+| Lesson 26 - Number-Up Cut and Assemble | 4 | 3 | 4 | 5 | 3 | 5 | 3 | 3 | 3.75 | — |
+| ProductionCenter-Tips\_Passkeys | 3 | 4 | 4 | 4 | 3 | 4 | **2** | 4 | 3.50 | ⚠ C7: no troubleshooting scenarios |
+| Approve and reject pages | 5 | 4 | 4 | 5 | 4 | 5 | 4 | 4 | 4.38 | — |
+| Apogee-Proofing-Trick\_GDIProofer-and-Split4ProofApogee | **2** | 4 | 4 | 4 | 5 | **2** | **2** | 4 | 3.38 | ⚠ C1: no headings. C6: no steps. C7: no troubleshooting |
+| Apogee-Tips\_Apogee-Prepress-with-Packaging-Pack | 4 | 3 | 4 | 4 | 3 | **2** | **2** | 4 | 3.25 | ⚠ C6: overview only, no steps. C7: no troubleshooting |
+| Apogee-Tips\_WebApproval-A-Fully-Integrated-Softproof-Solution | 4 | 3 | 4 | 4 | 3 | 3 | 4 | 3 | 3.50 | — |
+| The Essential Role of Virus Scanning and Tuning | 3 | 5 | 4 | 4 | 5 | 3 | 4 | 4 | 4.00 | — |
+| ProductionCenter-Tips\_ECO3-Production-Dashboard | 3 | 4 | 4 | 4 | 3 | 3 | **2** | 4 | 3.38 | ⚠ C7: no troubleshooting content |
+| ProductionCenter-Tips\_Enhanced-Collaboration | 4 | 4 | 4 | 4 | 3 | 3 | **2** | 3 | 3.38 | ⚠ C7: no troubleshooting content |
 
-> The ProductionCenter User Guide is the top scorer so far (avg 4.00). It has 12 numbered chapters, a full glossary, and text-complete procedures — basically the gold standard for what a RAG-ready document looks like. The only soft spots are self-containment (C2=3) and chunk-friendliness (C8=3), which are unavoidable in a 260-page reference guide that naturally cross-references itself. If your document scores lower than this one, it needs work.
+> The **Approve and reject pages** tutorial is the top scorer in batch 2 (avg 4.38) — well-structured, fully procedural with numbered steps, and includes special-case handling. **ProductionCenter UG** remains the overall reference benchmark (avg 4.00 for a 260-page guide). The dominant pattern across Tips & Tricks documents is C7=2 (no troubleshooting content), which is expected for awareness documents but limits RAG effectiveness for problem-resolution queries. 10 documents remain to be scored.
 
 **Steps to complete:**
 1. Open `doc_readiness_checklist.xlsx` → **Readiness Checklist** sheet
@@ -209,7 +219,7 @@ The purpose of this task is to test the quality of APAI Chat's answers against a
 | **Total** | | **72** | **72** | **46** | **26** | **64%** |
 
 **Pending items:**
-- [ ] Complete readiness scoring for remaining 20 sample documents
+- [ ] Complete readiness scoring for remaining 10 sample documents
 - [ ] Expand `qa_test.xlsx` with questions for all 24 sampled documents
 
 ---
