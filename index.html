@@ -186,6 +186,10 @@
       font-size: 0.88rem;
     }
     .flag-warn { color: #e67e22; font-weight: 600; }
+    .flag-details summary { list-style: none; cursor: pointer; display: inline; }
+    .flag-details summary::-webkit-details-marker { display: none; }
+    .flag-details summary:hover .flag-warn { text-decoration: underline dotted; }
+    .flag-detail-text { font-size: 0.76rem; color: #495057; padding: 5px 2px 2px; line-height: 1.5; max-width: 200px; }
 
     /* ── TASK STATUS LIST ── */
     .task-list { list-style: none; margin-top: 12px; }
@@ -421,7 +425,7 @@
             <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:67.5%"></div></div>
             <span class="score-val">3.38</span>
           </td>
-          <td><span class="flag-warn">&#9888; C5=2</span></td>
+          <td><details class="flag-details"><summary><span class="flag-warn">&#9888; C5=2</span></summary><div class="flag-detail-text">C5=2: Key fold direction information relies heavily on images; add a text description of the arrow direction to make the content RAG-accessible.</div></details></td>
         </tr>
         <tr>
           <td>Apogee-InkDrive-Trick_Accurate-CIP3-Presets</td>
@@ -451,7 +455,7 @@
             <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:70%"></div></div>
             <span class="score-val">3.50</span>
           </td>
-          <td><span class="flag-warn">&#9888; C6=2, C7=2</span></td>
+          <td><details class="flag-details"><summary><span class="flag-warn">&#9888; C6=2, C7=2</span></summary><div class="flag-detail-text">C6=2: No procedure steps for DQS activation or configuration.<br>C7=2: No troubleshooting content.</div></details></td>
         </tr>
         <tr>
           <td>Lesson 26 - Number-Up Cut and Assemble</td>
@@ -471,7 +475,7 @@
             <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:70%"></div></div>
             <span class="score-val">3.50</span>
           </td>
-          <td><span class="flag-warn">&#9888; C7=2</span></td>
+          <td><details class="flag-details"><summary><span class="flag-warn">&#9888; C7=2</span></summary><div class="flag-detail-text">C7=2: No troubleshooting scenarios for passkey failures or browser compatibility issues.</div></details></td>
         </tr>
         <tr>
           <td>Approve and reject pages</td>
@@ -491,7 +495,7 @@
             <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:67.5%"></div></div>
             <span class="score-val">3.38</span>
           </td>
-          <td><span class="flag-warn">&#9888; C1=2, C6=2, C7=2</span></td>
+          <td><details class="flag-details"><summary><span class="flag-warn">&#9888; C1=2, C6=2, C7=2</span></summary><div class="flag-detail-text">C1=2: No internal section headings within body text.<br>C6=2: Feature description only — no setup or usage steps included.<br>C7=2: No error or troubleshooting content.</div></details></td>
         </tr>
         <tr>
           <td>Apogee-Tips_Apogee-Prepress-with-Packaging-Pack</td>
@@ -501,7 +505,7 @@
             <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:65%"></div></div>
             <span class="score-val">3.25</span>
           </td>
-          <td><span class="flag-warn">&#9888; C6=2, C7=2</span></td>
+          <td><details class="flag-details"><summary><span class="flag-warn">&#9888; C6=2, C7=2</span></summary><div class="flag-detail-text">C6=2: Overview only — links to external tutorials but no procedural steps in the document.<br>C7=2: No troubleshooting content.</div></details></td>
         </tr>
         <tr>
           <td>Apogee-Tips_WebApproval-A-Fully-Integrated-Softproof-Solution</td>
@@ -531,7 +535,7 @@
             <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:67.5%"></div></div>
             <span class="score-val">3.38</span>
           </td>
-          <td><span class="flag-warn">&#9888; C7=2</span></td>
+          <td><details class="flag-details"><summary><span class="flag-warn">&#9888; C7=2</span></summary><div class="flag-detail-text">C7=2: No troubleshooting content for data access or dashboard issues.</div></details></td>
         </tr>
         <tr>
           <td>ProductionCenter-Tips_Enhanced-Collaboration</td>
@@ -541,7 +545,7 @@
             <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:67.5%"></div></div>
             <span class="score-val">3.38</span>
           </td>
-          <td><span class="flag-warn">&#9888; C7=2</span></td>
+          <td><details class="flag-details"><summary><span class="flag-warn">&#9888; C7=2</span></summary><div class="flag-detail-text">C7=2: No troubleshooting content for annotation or notification failures.</div></details></td>
         </tr>
         <tr>
           <td>PrintSphere_OLH_en-US_draft02</td>
