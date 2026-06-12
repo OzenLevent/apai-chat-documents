@@ -258,7 +258,7 @@
     .run-table tr:last-child td { border-bottom:none; }
     .run-table tr:hover td { background:#f8fafb; }
     .pill-pass { display:inline-block; background:#00C000; color:#fff; font-weight:700; border-radius:12px; padding:2px 10px; min-width:36px; text-align:center; }
-    .pill-fail { display:inline-block; background:#0000CC; color:#fff; font-weight:700; border-radius:12px; padding:2px 10px; min-width:36px; text-align:center; }
+    .pill-fail { display:inline-block; background:#CC0000; color:#fff; font-weight:700; border-radius:12px; padding:2px 10px; min-width:36px; text-align:center; }
     .score-pill { display:inline-block; font-weight:700; padding:2px 8px; border-radius:8px; font-size:0.9rem; }
     .score-pill.good { color:#155724; background:#d4edda; }
     .score-pill.warn { color:#856404; background:#fff3cd; }
@@ -359,9 +359,11 @@
               <div style="font-size:0.7rem; color:#6c757d;">of 24</div>
             </div>
           </div>
-          <div style="margin-top:12px; font-size:0.8rem;">
-            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#1F6B75;display:inline-block;"></span>Scored (15)</span>
-            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#e9ecef;display:inline-block;"></span>Pending (9)</span>
+          <div style="margin-top:12px; font-size:0.78rem; line-height:1.8;">
+            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#1F6B75;display:inline-block;"></span>≥4.0 Strong (3)</span>
+            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#2eacba;display:inline-block;"></span>3.5–3.9 Good (7)</span>
+            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#e67e22;display:inline-block;"></span>&lt;3.5 Review (5)</span>
+            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#e9ecef;border:1px solid #ced4da;display:inline-block;"></span>Pending (9)</span>
           </div>
         </div>
         <div style="width:1px; background:#e9ecef; height:80%;"></div>
@@ -374,9 +376,10 @@
               <div style="font-size:0.7rem; color:#6c757d;">of 190</div>
             </div>
           </div>
-          <div style="margin-top:12px; font-size:0.8rem;">
-            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#1F6B75;display:inline-block;"></span>Tested (72)</span>
-            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#e9ecef;display:inline-block;"></span>Pending (118)</span>
+          <div style="margin-top:12px; font-size:0.78rem; line-height:1.8;">
+            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#00C000;display:inline-block;"></span>Pass (46)</span>
+            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#CC0000;display:inline-block;"></span>Fail (26)</span>
+            <span style="display:inline-flex; align-items:center; gap:4px; margin:2px 6px;"><span style="width:10px;height:10px;border-radius:50%;background:#e9ecef;border:1px solid #ced4da;display:inline-block;"></span>Pending (118)</span>
           </div>
         </div>
       </div>
@@ -734,40 +737,44 @@
     }
   });
 
-  // ── Chart 2a: Donut – readiness scoring progress ──
+  // ── Chart 2a: Donut – readiness scoring progress (4 segments) ──
   new Chart(document.getElementById('chartDonut1'), {
     type: 'doughnut',
     data: {
+      labels: ['≥4.0 Strong', '3.5–3.9 Good', '<3.5 Review', 'Pending'],
       datasets: [{
-        data: [15, 9],
-        backgroundColor: ['#1F6B75', '#e9ecef'],
-        borderWidth: 0,
+        data: [3, 7, 5, 9],
+        backgroundColor: ['#1F6B75', '#2eacba', '#e67e22', '#e9ecef'],
+        borderWidth: [0, 0, 0, 1],
+        borderColor: ['transparent','transparent','transparent','#ced4da'],
         hoverOffset: 4
       }]
     },
     options: {
       cutout: '72%',
       plugins: { legend: { display: false }, tooltip: {
-        callbacks: { label: ctx => ctx.dataIndex === 0 ? ' Scored: 15' : ' Pending: 9' }
+        callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}` }
       }}
     }
   });
 
-  // ── Chart 2b: Donut – AI testing progress ──
+  // ── Chart 2b: Donut – AI testing progress (3 segments) ──
   new Chart(document.getElementById('chartDonut2'), {
     type: 'doughnut',
     data: {
+      labels: ['Pass', 'Fail', 'Pending'],
       datasets: [{
-        data: [72, 118],
-        backgroundColor: ['#1F6B75', '#e9ecef'],
-        borderWidth: 0,
+        data: [46, 26, 118],
+        backgroundColor: ['#00C000', '#CC0000', '#e9ecef'],
+        borderWidth: [0, 0, 1],
+        borderColor: ['transparent','transparent','#ced4da'],
         hoverOffset: 4
       }]
     },
     options: {
       cutout: '72%',
       plugins: { legend: { display: false }, tooltip: {
-        callbacks: { label: ctx => ctx.dataIndex === 0 ? ' Tested: 72' : ' Pending: 118' }
+        callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}` }
       }}
     }
   });
