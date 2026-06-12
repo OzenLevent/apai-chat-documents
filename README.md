@@ -10,7 +10,7 @@ This repository supports the **APAI Chat** AI assistant at [eqap.ac.eco3sw.com](
 |------|-------------|--------------|
 | `documents_uploaded.xlsx` | Document tracking list – 80 docs, current site state (June 2026) | 2026-06-12 |
 | `documents_vs_site_comparison.xlsx` | Side-by-side comparison of site documents vs. tracking list | 2026-06-03 |
-| `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 15 samples scored · 25 sampled docs · all 80 docs (auto) | 2026-06-12 |
+| `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 15 samples scored · 24 sampled docs · all 80 docs (auto) | 2026-06-12 |
 | `ai-testing-evaluation-plan.md` | AI Testing & Evaluation Plan v1.4 – full test methodology reference | 2026-06-02 |
 | `qa_test.xlsx` | Test Q&A dataset – 15 sheets · 190 questions total · **72 tested (4 sheets · 46 Pass / 26 Fail · 64%)** · 118 pending | 2026-06-12 |
 
@@ -25,7 +25,7 @@ This repository supports the **APAI Chat** AI assistant at [eqap.ac.eco3sw.com](
 - **80 documents** currently uploaded to the APAI Chat site
 - `PrintSphere_OLH_en-US_draft02` added 2026-06-12 (ID 129, 116 chunks, COMPLETED)
 - Site document status tracked: COMPLETED / PARTIALLY\_COMPLETED / FAILED
-- **25 documents** selected for manual readiness scoring — **15 scored**, 9 pending PDFs
+- **24 documents** selected for manual readiness scoring — **15 scored**, 9 pending PDFs
 
 ---
 
@@ -61,7 +61,7 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 | Sheet | Content | How populated |
 |-------|---------|---------------|
 | **All Documents – Status** | All 80 site documents with ingestion health (status, chunks, failed images) | Automated from API |
-| **Readiness Checklist** | 25 sampled documents scored on 8 criteria | Manual review required |
+| **Readiness Checklist** | 24 sampled documents scored on 8 criteria | Manual review required |
 
 **Scoring criteria (1–5 each):**
 
@@ -78,7 +78,7 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 
 > ⚠ Documents scoring **≤ 2** on any criterion need remediation before launch.
 
-**Sample selection — 25 documents** across all product × doc type × version categories:
+**Sample selection — 24 documents** across all product × doc type × version categories:
 
 | # | Product | Category | Version | Sample Document |
 |---|---------|----------|---------|-----------------|
@@ -101,7 +101,6 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 | 17 | PREPRESS | Tutorial – Proofing | 14.0 | Proofing-Contract-Proofing |
 | 18 | PREPRESS | Tutorial | 15.0 | Advanced Job Management |
 | 19 | PREPRESS | Online Help | 3.0 | PrintSphere\_OLH\_en-US\_draft02 |
-| 19b | PREPRESS | Online Help | 3.0 | PrintSphere\_OLH\_en-US\_draft01 |
 | 20 | PRODUCTION\_CENTER | Tips & Tricks – Dashboard | 14.0 | ProductionCenter-Tips\_ECO3-Production-Dashboard |
 | 21 | PRODUCTION\_CENTER | Tips & Tricks – Collaboration | 14.0 | ProductionCenter-Tips\_Enhanced-Collaboration |
 | 22 | PRODUCTION\_CENTER | Tips & Tricks | 14.0 | ProductionCenter-Tips\_Passkeys |
