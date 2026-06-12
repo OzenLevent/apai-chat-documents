@@ -12,7 +12,7 @@ This repository supports the **APAI Chat** AI assistant at [eqap.ac.eco3sw.com](
 | `documents_vs_site_comparison.xlsx` | Side-by-side comparison of site documents vs. tracking list | 2026-06-03 |
 | `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 15 samples scored · 24 sampled docs · all 80 docs (auto) | 2026-06-12 |
 | `ai-testing-evaluation-plan.md` | AI Testing & Evaluation Plan v1.4 – full test methodology reference | 2026-06-02 |
-| `qa_test.xlsx` | Test Q&A dataset – 15 sheets · 190 questions total · **72 tested (4 sheets · 46 Pass / 26 Fail · 64%)** · 118 pending | 2026-06-12 |
+| `qa_test.xlsx` | Test Q&A dataset – 15 sheets · 190 questions · **190 tested (15 sheets · 141 Pass / 49 Fail · 74%)** | 2026-06-12 |
 
 > **Versioning reminder:** When regenerating comparison or checklist files, add a version or date suffix (e.g. `_v2` or `_2026-07-01`) and update the file table above.
 >
@@ -169,7 +169,7 @@ The purpose of this task is to test the quality of APAI Chat's answers against a
 3. The AI's response is recorded and compared against the reference answer
 4. The result is marked as Pass or Fail accordingly
 
-**Current test file:** `qa_test.xlsx` — 15 sheets, 190 questions total (72 tested, 118 pending)
+**Current test file:** `qa_test.xlsx` — 15 sheets, 190 questions total (all tested)
 
 **Question types used** (per Section 6 of AI Testing & Evaluation Plan):
 
@@ -215,21 +215,20 @@ The purpose of this task is to test the quality of APAI Chat's answers against a
 | Impose - Folding Arrow | Apogee-Impose-Trick\_Folding-Direction-Arrow | 4 | ✅ | 3 | 1 | 75% |
 | InkDrive - CIP3 Presets | Apogee-InkDrive-Trick\_Accurate-CIP3-Presets | 5 | ✅ | 3 | 2 | 60% |
 | ProductionCenter UG | ProductionCenter\_UG\_14.0\_en-US | 58 | ✅ | 38 | 20 | 66% |
-| DQS - Digital QuickStrip | Apogee-Trick\_Apogee-DQS | 5 | — | — | — | — |
-| Lesson 26 - Number-Up C&A | Lesson 26 - Number-Up Cut and Assemble | 10 | — | — | — | — |
-| PC - Passkeys | ProductionCenter-Tips\_Passkeys | 6 | — | — | — | — |
-| PC - Approve Reject Pages | Approve and reject pages | 12 | — | — | — | — |
-| Proofing - GDI & Split4Proof | Apogee-Proofing-Trick\_GDIProofer-and-Split4ProofApogee | 5 | — | — | — | — |
-| Packaging - Packaging Pack | Apogee-Tips\_Apogee-Prepress-with-Packaging-Pack | 5 | — | — | — | — |
-| WebApproval - Softproof | Apogee-Tips\_WebApproval-A-Fully-Integrated-Softproof-Solution | 8 | — | — | — | — |
-| Security - Virus Scanning | The Essential Role of Virus Scanning and Tuning | 5 | — | — | — | — |
-| PC - Production Dashboard | ProductionCenter-Tips\_ECO3-Production-Dashboard | 5 | — | — | — | — |
-| PC - Enhanced Collaboration | ProductionCenter-Tips\_Enhanced-Collaboration | 7 | — | — | — | — |
-| PrintSphere OLH - draft02 | PrintSphere\_OLH\_en-US\_draft02 | 50 | — | — | — | — |
-| **Total** | | **190** | **72** | **46** | **26** | **64%** |
+| DQS - Digital QuickStrip | Apogee-Trick\_Apogee-DQS | 5 | ✅ | 4 | 1 | 80% |
+| Lesson 26 - Number-Up C&A | Lesson 26 - Number-Up Cut and Assemble | 10 | ✅ | 9 | 1 | 90% |
+| PC - Passkeys | ProductionCenter-Tips\_Passkeys | 6 | ✅ | 6 | 0 | 100% |
+| PC - Approve Reject Pages | Approve and reject pages | 12 | ✅ | 11 | 1 | 92% |
+| Proofing - GDI & Split4Proof | Apogee-Proofing-Trick\_GDIProofer-and-Split4ProofApogee | 5 | ✅ | 4 | 1 | 80% |
+| Packaging - Packaging Pack | Apogee-Tips\_Apogee-Prepress-with-Packaging-Pack | 5 | ✅ | 2 | 3 | 40% |
+| WebApproval - Softproof | Apogee-Tips\_WebApproval-A-Fully-Integrated-Softproof-Solution | 8 | ✅ | 3 | 5 | 38% |
+| Security - Virus Scanning | The Essential Role of Virus Scanning and Tuning | 5 | ✅ | 4 | 1 | 80% |
+| PC - Production Dashboard | ProductionCenter-Tips\_ECO3-Production-Dashboard | 5 | ✅ | 4 | 1 | 80% |
+| PC - Enhanced Collaboration | ProductionCenter-Tips\_Enhanced-Collaboration | 7 | ✅ | 5 | 2 | 71% |
+| PrintSphere OLH - draft02 | PrintSphere\_OLH\_en-US\_draft02 | 50 | ✅ | 43 | 7 | 86% |
+| **Total** | | **190** | **190** | **141** | **49** | **74%** |
 
 **Pending items:**
-- [ ] Run AI testing on 11 pending sheets (118 questions, cols H–L empty)
 - [ ] Create Q&A sheets for remaining 9 unscored documents (batch 3, pending PDFs)
 
 ---
