@@ -282,8 +282,8 @@
   <p>Tracks the ingestion health, RAG-readiness, and AI response quality of documents uploaded to the APAI Chat assistant.</p>
   <div class="header-meta">
     <span class="badge">&#127760; eqap.ac.eco3sw.com</span>
-    <span class="badge">&#128194; 79 documents uploaded</span>
-    <span class="badge">&#128197; Last updated: 2026-06-03 · 4 sheets tested</span>
+    <span class="badge">&#128194; 80 documents uploaded</span>
+    <span class="badge">&#128197; Last updated: 2026-06-12 · 4 sheets tested · 11 pending</span>
     <a href="https://github.com/OzenLevent/apai-chat-documents" target="_blank" class="badge" style="text-decoration:none; color:#fff; display:inline-flex; align-items:center; gap:6px;">
       <svg height="13" width="13" viewBox="0 0 16 16" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       apai-chat-documents
@@ -299,7 +299,7 @@
 
     <div class="card">
       <h2>Task 1 — Document Tracking</h2>
-      <div class="stat-number">79</div>
+      <div class="stat-number">80</div>
       <div class="stat-sub">documents on site</div>
       <span class="status-pill pill-done">&#10003; Complete</span>
       <div class="progress-wrap">
@@ -310,23 +310,23 @@
 
     <div class="card">
       <h2>Task 2 — Readiness Scoring</h2>
-      <div class="stat-number">14</div>
-      <div class="stat-sub">of 24 sample documents scored</div>
+      <div class="stat-number">15</div>
+      <div class="stat-sub">of 25 sample documents scored</div>
       <span class="status-pill pill-active">&#9654; In Progress</span>
       <div class="progress-wrap">
-        <div class="progress-label"><span>Samples scored</span><span>58%</span></div>
-        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:58%"></div></div>
+        <div class="progress-label"><span>Samples scored</span><span>60%</span></div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:60%"></div></div>
       </div>
     </div>
 
     <div class="card">
       <h2>Task 3 — AI Response Testing</h2>
       <div class="stat-number">72</div>
-      <div class="stat-sub">of 72 questions tested · 46 Pass, 26 Fail</div>
-      <span class="status-pill pill-done">&#10003; Complete</span>
+      <div class="stat-sub">of 190 questions tested · 46 Pass, 26 Fail</div>
+      <span class="status-pill pill-active">&#9654; In Progress</span>
       <div class="progress-wrap">
-        <div class="progress-label"><span>Questions tested</span><span>100%</span></div>
-        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:100%"></div></div>
+        <div class="progress-label"><span>Questions tested</span><span>38%</span></div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:38%"></div></div>
       </div>
     </div>
 
@@ -336,8 +336,8 @@
   <div class="grid-2">
 
     <div class="card">
-      <h2>Readiness Scoring — Criteria Scores per Document</h2>
-      <div class="chart-wrap" style="height:280px;">
+      <h2>Readiness — Average Score per Document (15 scored)</h2>
+      <div class="chart-wrap" style="height:340px;">
         <canvas id="chartSamples"></canvas>
       </div>
     </div>
@@ -507,6 +507,16 @@
           </td>
           <td><span class="flag-warn">&#9888; C7=2</span></td>
         </tr>
+        <tr>
+          <td>PrintSphere_OLH_en-US_draft02</td>
+          <td>PREPRESS</td><td>Online Help</td>
+          <td>5</td><td>3</td><td>4</td><td>5</td><td>3</td><td>5</td><td>3</td><td>3</td>
+          <td>
+            <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:77.5%"></div></div>
+            <span class="score-val">3.88</span>
+          </td>
+          <td>—</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -516,7 +526,7 @@
 
   <div style="margin-bottom:24px;">
     <div class="card">
-      <h2>AI Testing — Results Overview (4 sheets completed)</h2>
+      <h2>AI Testing — Results Overview (4 of 15 sheets tested)</h2>
       <div style="display:flex; gap:24px; margin-top:14px; flex-wrap:wrap; align-items:center;">
         <div style="text-align:center;">
           <div style="font-size:2.2rem; font-weight:700; color:#28a745;">46</div>
@@ -535,7 +545,7 @@
           <div style="font-size:0.8rem; color:#6c757d; margin-top:2px;">Tested</div>
         </div>
         <div style="text-align:center;">
-          <div style="font-size:2.2rem; font-weight:700; color:#28a745;">0</div>
+          <div style="font-size:2.2rem; font-weight:700; color:#28a745;">118</div>
           <div style="font-size:0.8rem; color:#6c757d; margin-top:2px;">Remaining</div>
         </div>
       </div>
@@ -602,26 +612,25 @@
     <div class="card">
       <h2>Task 2 — Readiness</h2>
       <ul class="task-list">
-        <li><span class="task-icon">&#9744;</span>Score remaining 10 sample documents</li>
-        <li><span class="task-icon">&#9744;</span>Upload SM JDF Prepress 15.0 Service Manual</li>
-        <li><span class="task-icon">&#9744;</span>Upload SM Prepress 15 - Service Manual</li>
+        <li><span class="task-icon">&#9744;</span>Score remaining 9 sample documents (PDFs needed)</li>
+        <li><span class="task-icon">&#9745;</span>Score PrintSphere OLH draft02 (avg 3.88 · 2026-06-12)</li>
         <li><span class="task-icon">&#9745;</span>Score batch 2 — 10 documents (2026-06-11)</li>
-        <li><span class="task-icon">&#9745;</span>Score first 4 sample documents (auto)</li>
-        <li><span class="task-icon">&#9745;</span>Build readiness checklist for all 79 docs</li>
+        <li><span class="task-icon">&#9745;</span>Score first 4 sample documents (2026-06-03)</li>
+        <li><span class="task-icon">&#9745;</span>Build readiness checklist for all 80 docs</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Task 3 — AI Testing</h2>
       <ul class="task-list">
-        <li><span class="task-icon">&#9744;</span>Expand Q&amp;A to all 24 sampled documents</li>
+        <li><span class="task-icon">&#9744;</span>Run AI testing on 11 pending sheets (118 questions)</li>
+        <li><span class="task-icon">&#9744;</span>Create Q&amp;A sheets for remaining 9 unscored docs</li>
+        <li><span class="task-icon">&#9745;</span>Add PrintSphere OLH draft02 — 50 questions (2026-06-12)</li>
+        <li><span class="task-icon">&#9745;</span>Add 10 batch-2 Q&amp;A sheets — 68 questions (2026-06-11)</li>
         <li><span class="task-icon">&#9745;</span>Run ProductionCenter UG (58 q · 38 Pass, 20 Fail)</li>
         <li><span class="task-icon">&#9745;</span>Run InkDrive – CIP3 Presets (5 q · 3 Pass, 2 Fail)</li>
         <li><span class="task-icon">&#9745;</span>Run Impose – Folding Arrow (4 q · 3 Pass, 1 Fail)</li>
         <li><span class="task-icon">&#9745;</span>Run Impose – Auto Page Numbering (5 q · 2 Pass, 3 Fail)</li>
-        <li><span class="task-icon">&#9745;</span>Fill APAI-Chat Answer, Found Source File / Page columns</li>
-        <li><span class="task-icon">&#9745;</span>Generate 72 questions for first 4 scored docs</li>
-        <li><span class="task-icon">&#9745;</span>Define column structure and test workflow</li>
       </ul>
     </div>
 
@@ -642,65 +651,55 @@
   const gray   = '#e9ecef';
   const orange = '#e67e22';
 
-  // ── Chart 1: Radar – criteria scores per document ──
+  // ── Chart 1: Horizontal bar – avg readiness score per document ──
   new Chart(document.getElementById('chartSamples'), {
-    type: 'radar',
+    type: 'bar',
     data: {
-      labels: ['C1 Structural', 'C2 Self-Contain', 'C3 Context', 'C4 Terminology', 'C5 Text/Image', 'C6 Procedure', 'C7 Error Prox.', 'C8 Chunk'],
-      datasets: [
-        {
-          label: 'Auto Page Numbering',
-          data: [4, 4, 4, 4, 3, 4, 3, 4],
-          borderColor: teal,
-          backgroundColor: 'rgba(31,107,117,0.12)',
-          pointBackgroundColor: teal,
-          borderWidth: 2,
-          pointRadius: 3
-        },
-        {
-          label: 'Folding Arrow',
-          data: [3, 4, 4, 4, 2, 3, 3, 4],
-          borderColor: orange,
-          backgroundColor: 'rgba(230,126,34,0.10)',
-          pointBackgroundColor: orange,
-          borderWidth: 2,
-          pointRadius: 3
-        },
-        {
-          label: 'CIP3 Presets',
-          data: [3, 4, 4, 4, 3, 3, 3, 4],
-          borderColor: teal2,
-          backgroundColor: 'rgba(46,172,186,0.10)',
-          pointBackgroundColor: teal2,
-          borderWidth: 2,
-          pointRadius: 3
-        },
-        {
-          label: 'ProductionCenter UG',
-          data: [5, 3, 4, 5, 4, 5, 3, 3],
-          borderColor: '#7030A0',
-          backgroundColor: 'rgba(112,48,160,0.10)',
-          pointBackgroundColor: '#7030A0',
-          borderWidth: 2,
-          pointRadius: 3
-        }
-      ]
+      labels: [
+        'Approve and reject pages',
+        'ProductionCenter UG',
+        'Virus Scanning & Tuning',
+        'PrintSphere OLH draft02',
+        'Auto Page Numbering',
+        'Lesson 26 – Number-Up C&A',
+        'WebApproval Softproof',
+        'DQS',
+        'CIP3 Presets',
+        'Passkeys',
+        'Folding Arrow',
+        'GDI & Split4Proof',
+        'ECO3 Dashboard',
+        'Enhanced Collaboration',
+        'Packaging Pack'
+      ],
+      datasets: [{
+        label: 'Avg Score (out of 5)',
+        data: [4.38, 4.00, 4.00, 3.88, 3.75, 3.75, 3.50, 3.50, 3.50, 3.50, 3.38, 3.38, 3.38, 3.38, 3.25],
+        backgroundColor: [
+          '#1F6B75','#1F6B75','#1F6B75','#2eacba',
+          '#2eacba','#2eacba','#2eacba','#2eacba',
+          '#2eacba','#2eacba','#e67e22','#e67e22',
+          '#e67e22','#e67e22','#e67e22'
+        ],
+        borderRadius: 4,
+        borderSkipped: false
+      }]
     },
     options: {
-      scales: {
-        r: {
-          min: 0,
-          max: 5,
-          ticks: { stepSize: 1, font: { size: 10 }, backdropColor: 'transparent' },
-          pointLabels: { font: { size: 10 } },
-          grid: { color: '#e0e0e0' },
-          angleLines: { color: '#e0e0e0' }
-        }
-      },
+      indexAxis: 'y',
       plugins: {
-        legend: {
-          position: 'bottom',
-          labels: { font: { size: 11 }, padding: 12, boxWidth: 12 }
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` Avg: ${ctx.parsed.x.toFixed(2)} / 5` } }
+      },
+      scales: {
+        x: {
+          min: 0, max: 5,
+          grid: { color: '#f0f0f0' },
+          ticks: { font: { size: 10 }, stepSize: 1 }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { size: 10 } }
         }
       }
     }
@@ -711,16 +710,27 @@
     type: 'bar',
     data: {
       labels: [
+        'PrintSphere OLH draft02',
         'ProductionCenter UG',
-        'InkDrive – CIP3 Presets',
+        'PC – Approve Reject Pages',
+        'Lesson 26 – Number-Up C&A',
+        'WebApproval – Softproof',
+        'PC – Enhanced Collaboration',
+        'PC – Passkeys',
+        'DQS – Digital QuickStrip',
+        'Proofing – GDI & Split4Proof',
+        'Packaging – Packaging Pack',
+        'Security – Virus Scanning',
+        'PC – Production Dashboard',
         'Impose – Auto Page Numbering',
+        'InkDrive – CIP3 Presets',
         'Impose – Folding Arrow'
       ],
       datasets: [{
         label: 'Questions',
-        data: [58, 5, 5, 4],
-        backgroundColor: [teal, teal2, teal2, teal2],
-        borderRadius: 5,
+        data: [50, 58, 12, 10, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 4],
+        backgroundColor: ctx => ctx.dataIndex < 11 ? teal2 : teal,
+        borderRadius: 4,
         borderSkipped: false
       }]
     },
@@ -733,11 +743,11 @@
       scales: {
         x: {
           grid: { color: '#f0f0f0' },
-          ticks: { font: { size: 11 } }
+          ticks: { font: { size: 10 } }
         },
         y: {
           grid: { display: false },
-          ticks: { font: { size: 11 } }
+          ticks: { font: { size: 10 } }
         }
       }
     }

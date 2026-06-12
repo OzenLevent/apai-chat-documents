@@ -8,11 +8,11 @@ This repository supports the **APAI Chat** AI assistant at [eqap.ac.eco3sw.com](
 
 | File | Description | Last Updated |
 |------|-------------|--------------|
-| `documents_uploaded.xlsx` | Initial document tracking list – current site state (June 2026) | 2026-06-03 |
+| `documents_uploaded.xlsx` | Document tracking list – 80 docs, current site state (June 2026) | 2026-06-12 |
 | `documents_vs_site_comparison.xlsx` | Side-by-side comparison of site documents vs. tracking list | 2026-06-03 |
-| `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 14 samples scored · 24 sampled docs selected · all 79 docs (auto) | 2026-06-11 |
+| `doc_readiness_checklist.xlsx` | Phase 1 documentation readiness checklist – 15 samples scored · 25 sampled docs · all 80 docs (auto) | 2026-06-12 |
 | `ai-testing-evaluation-plan.md` | AI Testing & Evaluation Plan v1.4 – full test methodology reference | 2026-06-02 |
-| `qa_test.xlsx` | Test Q&A dataset – 4 sheets (one per scored document) · 72 questions total · 58 from ProductionCenter UG · **72 questions tested (4 sheets complete · 46 Pass / 26 Fail · 64%)** | 2026-06-03 |
+| `qa_test.xlsx` | Test Q&A dataset – 15 sheets · 190 questions total · **72 tested (4 sheets · 46 Pass / 26 Fail · 64%)** · 118 pending | 2026-06-12 |
 
 > **Versioning reminder:** When regenerating comparison or checklist files, add a version or date suffix (e.g. `_v2` or `_2026-07-01`) and update the file table above.
 >
@@ -20,13 +20,12 @@ This repository supports the **APAI Chat** AI assistant at [eqap.ac.eco3sw.com](
 
 ---
 
-## Summary (as of 2026-06-03)
+## Summary (as of 2026-06-12)
 
-- **79 documents** currently uploaded to the APAI Chat site
-- All documents in `documents_uploaded.xlsx` match the site (Service Manuals not yet uploaded)
-- Audience fields split into separate columns in the comparison file
+- **80 documents** currently uploaded to the APAI Chat site
+- `PrintSphere_OLH_en-US_draft02` added 2026-06-12 (ID 129, 116 chunks, COMPLETED)
 - Site document status tracked: COMPLETED / PARTIALLY\_COMPLETED / FAILED
-- **24 documents** selected for manual readiness scoring across all product × doc type × version categories
+- **25 documents** selected for manual readiness scoring — **15 scored**, 9 pending PDFs
 
 ---
 
@@ -49,8 +48,7 @@ Regularly verify that the documents tracked in `documents_uploaded.xlsx` match w
 7. Commit and push all changes
 
 **Pending items:**
-- [ ] Upload **SM JDF Prepress 15.0 Service Manual** to the site
-- [ ] Upload **SM Prepress 15 - Service Manual** to the site
+- No outstanding items.
 
 ---
 
@@ -62,8 +60,8 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 
 | Sheet | Content | How populated |
 |-------|---------|---------------|
-| **All Documents – Status** | All 79 site documents with ingestion health (status, chunks, failed images) | Automated from API |
-| **Readiness Checklist** | 24 sampled documents scored on 8 criteria | Manual review required |
+| **All Documents – Status** | All 80 site documents with ingestion health (status, chunks, failed images) | Automated from API |
+| **Readiness Checklist** | 25 sampled documents scored on 8 criteria | Manual review required |
 
 **Scoring criteria (1–5 each):**
 
@@ -80,7 +78,7 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 
 > ⚠ Documents scoring **≤ 2** on any criterion need remediation before launch.
 
-**Sample selection — 24 documents** across all product × doc type × version categories:
+**Sample selection — 25 documents** across all product × doc type × version categories:
 
 | # | Product | Category | Version | Sample Document |
 |---|---------|----------|---------|-----------------|
@@ -102,7 +100,8 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 | 16 | PREPRESS | Tutorial – QMS | 14.0 | QMS-Check-and-Double-Check |
 | 17 | PREPRESS | Tutorial – Proofing | 14.0 | Proofing-Contract-Proofing |
 | 18 | PREPRESS | Tutorial | 15.0 | Advanced Job Management |
-| 19 | PREPRESS | Online Help | 3.0 | PrintSphere\_OLH\_en-US\_draft01 |
+| 19 | PREPRESS | Online Help | 3.0 | PrintSphere\_OLH\_en-US\_draft02 |
+| 19b | PREPRESS | Online Help | 3.0 | PrintSphere\_OLH\_en-US\_draft01 |
 | 20 | PRODUCTION\_CENTER | Tips & Tricks – Dashboard | 14.0 | ProductionCenter-Tips\_ECO3-Production-Dashboard |
 | 21 | PRODUCTION\_CENTER | Tips & Tricks – Collaboration | 14.0 | ProductionCenter-Tips\_Enhanced-Collaboration |
 | 22 | PRODUCTION\_CENTER | Tips & Tricks | 14.0 | ProductionCenter-Tips\_Passkeys |
@@ -129,7 +128,7 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 
 > **Flag rule:** Any criterion scoring ≤ 2 must have a Priority Action entry explaining what needs to change before the document is suitable for RAG ingestion.
 
-**Worked examples (scored as of 2026-06-11):**
+**Worked examples (scored as of 2026-06-12):**
 
 | Document | C1 | C2 | C3 | C4 | C5 | C6 | C7 | C8 | Avg | Flag |
 |----------|----|----|----|----|----|----|----|----|-----|------|
@@ -140,6 +139,7 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 | Apogee-Trick\_Apogee-DQS | 3 | 4 | 4 | 4 | 5 | **2** | **2** | 4 | 3.50 | ⚠ C6: no steps. C7: no troubleshooting |
 | Lesson 26 - Number-Up Cut and Assemble | 4 | 3 | 4 | 5 | 3 | 5 | 3 | 3 | 3.75 | — |
 | ProductionCenter-Tips\_Passkeys | 3 | 4 | 4 | 4 | 3 | 4 | **2** | 4 | 3.50 | ⚠ C7: no troubleshooting scenarios |
+| PrintSphere\_OLH\_en-US\_draft02 | 5 | 3 | 4 | 5 | 3 | 5 | 3 | 3 | 3.88 | — |
 | Approve and reject pages | 5 | 4 | 4 | 5 | 4 | 5 | 4 | 4 | 4.38 | — |
 | Apogee-Proofing-Trick\_GDIProofer-and-Split4ProofApogee | **2** | 4 | 4 | 4 | 5 | **2** | **2** | 4 | 3.38 | ⚠ C1: no headings. C6: no steps. C7: no troubleshooting |
 | Apogee-Tips\_Apogee-Prepress-with-Packaging-Pack | 4 | 3 | 4 | 4 | 3 | **2** | **2** | 4 | 3.25 | ⚠ C6: overview only, no steps. C7: no troubleshooting |
@@ -148,7 +148,7 @@ Based on **Section 5** of the AI Testing & Evaluation Plan (`ai-testing-evaluati
 | ProductionCenter-Tips\_ECO3-Production-Dashboard | 3 | 4 | 4 | 4 | 3 | 3 | **2** | 4 | 3.38 | ⚠ C7: no troubleshooting content |
 | ProductionCenter-Tips\_Enhanced-Collaboration | 4 | 4 | 4 | 4 | 3 | 3 | **2** | 3 | 3.38 | ⚠ C7: no troubleshooting content |
 
-> The **Approve and reject pages** tutorial is the top scorer in batch 2 (avg 4.38) — well-structured, fully procedural with numbered steps, and includes special-case handling. **ProductionCenter UG** remains the overall reference benchmark (avg 4.00 for a 260-page guide). The dominant pattern across Tips & Tricks documents is C7=2 (no troubleshooting content), which is expected for awareness documents but limits RAG effectiveness for problem-resolution queries. 10 documents remain to be scored.
+> **Approve and reject pages** is the top scorer (avg 4.38). **PrintSphere OLH draft02** scores well on structure and procedures (C1=5, C6=5) but loses on self-containment and chunk-friendliness due to its size and cross-references. The dominant pattern remains C7=2 across Tips & Tricks documents. 9 documents remain to be scored.
 
 **Steps to complete:**
 1. Open `doc_readiness_checklist.xlsx` → **Readiness Checklist** sheet
@@ -170,7 +170,7 @@ The purpose of this task is to test the quality of APAI Chat's answers against a
 3. The AI's response is recorded and compared against the reference answer
 4. The result is marked as Pass or Fail accordingly
 
-**Current test file:** `qa_test.xlsx` — one sheet per scored document, 72 questions total
+**Current test file:** `qa_test.xlsx` — 15 sheets, 190 questions total (72 tested, 118 pending)
 
 **Question types used** (per Section 6 of AI Testing & Evaluation Plan):
 
@@ -212,15 +212,26 @@ The purpose of this task is to test the quality of APAI Chat's answers against a
 
 | Sheet | Document | Questions | Tested | Pass | Fail | Score |
 |-------|----------|-----------|--------|------|------|-------|
-| Impose - Auto Page Numbering | Apogee-Impose-Trick\_Automatic-Page-Numbering | 5 | ✅ Yes | 2 | 3 | 40% |
-| Impose - Folding Arrow | Apogee-Impose-Trick\_Folding-Direction-Arrow | 4 | ✅ Yes | 3 | 1 | 75% |
-| InkDrive - CIP3 Presets | Apogee-InkDrive-Trick\_Accurate-CIP3-Presets | 5 | ✅ Yes | 3 | 2 | 60% |
-| ProductionCenter UG | ProductionCenter\_UG\_14.0\_en-US | 58 | ✅ Yes | 38 | 20 | 66% |
-| **Total** | | **72** | **72** | **46** | **26** | **64%** |
+| Impose - Auto Page Numbering | Apogee-Impose-Trick\_Automatic-Page-Numbering | 5 | ✅ | 2 | 3 | 40% |
+| Impose - Folding Arrow | Apogee-Impose-Trick\_Folding-Direction-Arrow | 4 | ✅ | 3 | 1 | 75% |
+| InkDrive - CIP3 Presets | Apogee-InkDrive-Trick\_Accurate-CIP3-Presets | 5 | ✅ | 3 | 2 | 60% |
+| ProductionCenter UG | ProductionCenter\_UG\_14.0\_en-US | 58 | ✅ | 38 | 20 | 66% |
+| DQS - Digital QuickStrip | Apogee-Trick\_Apogee-DQS | 5 | — | — | — | — |
+| Lesson 26 - Number-Up C&A | Lesson 26 - Number-Up Cut and Assemble | 10 | — | — | — | — |
+| PC - Passkeys | ProductionCenter-Tips\_Passkeys | 6 | — | — | — | — |
+| PC - Approve Reject Pages | Approve and reject pages | 12 | — | — | — | — |
+| Proofing - GDI & Split4Proof | Apogee-Proofing-Trick\_GDIProofer-and-Split4ProofApogee | 5 | — | — | — | — |
+| Packaging - Packaging Pack | Apogee-Tips\_Apogee-Prepress-with-Packaging-Pack | 5 | — | — | — | — |
+| WebApproval - Softproof | Apogee-Tips\_WebApproval-A-Fully-Integrated-Softproof-Solution | 8 | — | — | — | — |
+| Security - Virus Scanning | The Essential Role of Virus Scanning and Tuning | 5 | — | — | — | — |
+| PC - Production Dashboard | ProductionCenter-Tips\_ECO3-Production-Dashboard | 5 | — | — | — | — |
+| PC - Enhanced Collaboration | ProductionCenter-Tips\_Enhanced-Collaboration | 7 | — | — | — | — |
+| PrintSphere OLH - draft02 | PrintSphere\_OLH\_en-US\_draft02 | 50 | — | — | — | — |
+| **Total** | | **190** | **72** | **46** | **26** | **64%** |
 
 **Pending items:**
-- [ ] Complete readiness scoring for remaining 10 sample documents
-- [ ] Expand `qa_test.xlsx` with questions for all 24 sampled documents
+- [ ] Run AI testing on 11 pending sheets (118 questions, cols H–L empty)
+- [ ] Create Q&A sheets for remaining 9 unscored documents (batch 3, pending PDFs)
 
 ---
 
