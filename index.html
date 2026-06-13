@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APAI Chat – Content Readiness &amp; AI Quality Dashboard</title>
+  <title>APAI Chat – Content Readiness &amp; APAI Chat Quality Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -282,8 +282,8 @@
 <body>
 
 <header>
-  <h1>APAI Chat — Content Readiness &amp; AI Quality Dashboard</h1>
-  <p>Tracks the ingestion health, RAG-readiness, and AI response quality of documents uploaded to the APAI Chat assistant.</p>
+  <h1>APAI Chat — Content Readiness &amp; Quality Dashboard</h1>
+  <p>Tracks the ingestion health, RAG-readiness, and APAI Chat response quality of documents uploaded to the APAI Chat assistant.</p>
   <div class="header-meta">
     <span class="badge">&#127760; eqap.ac.eco3sw.com</span>
     <span class="badge">&#128194; 80 documents uploaded (incl. 1 internal reference)</span>
@@ -324,13 +324,17 @@
     </div>
 
     <div class="card">
-      <h2>Task 3 — AI Response Testing</h2>
+      <h2>Task 3 — APAI Chat Response Testing</h2>
       <div class="stat-number">190</div>
       <div class="stat-sub">of 190 questions tested · 141 Pass, 49 Fail</div>
-      <span class="status-pill pill-done">&#10003; Complete</span>
+      <span class="status-pill pill-active">&#9654; In Progress</span>
       <div class="progress-wrap">
-        <div class="progress-label"><span>Questions tested</span><span>100%</span></div>
+        <div class="progress-label"><span>Batch 1–2 tested</span><span>100%</span></div>
         <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Batch 3 (9 docs)</span><span>Pending</span></div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
       </div>
     </div>
 
@@ -372,7 +376,7 @@
         </div>
         <div style="width:1px; background:#e9ecef; height:80%;"></div>
         <div style="text-align:center; flex:1;">
-          <div style="font-size:0.8rem; font-weight:600; color:#495057; margin-bottom:10px; text-transform:uppercase; letter-spacing:.05em;">AI Testing</div>
+          <div style="font-size:0.8rem; font-weight:600; color:#495057; margin-bottom:10px; text-transform:uppercase; letter-spacing:.05em;">APAI Chat Testing</div>
           <div style="position:relative; width:150px; height:150px; margin:0 auto;">
             <canvas id="chartDonut2"></canvas>
             <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; pointer-events:none;">
@@ -393,6 +397,22 @@
   <!-- ── SCORED DOCUMENTS TABLE ── -->
   <p class="section-title">Scored Documents — Readiness Results</p>
   <div class="card" style="margin-bottom:32px;">
+    <details style="margin-bottom:14px;">
+      <summary style="cursor:pointer; font-size:0.8rem; font-weight:600; color:#1F6B75; list-style:none; display:inline-flex; align-items:center; gap:6px;">
+        <span>&#9432;</span> Scoring criteria (C1–C8)
+      </summary>
+      <div style="margin-top:10px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:6px 20px; font-size:0.8rem; color:#495057; line-height:1.6;">
+        <div><strong>C1</strong> — Structure &amp; headings</div>
+        <div><strong>C2</strong> — Language clarity</div>
+        <div><strong>C3</strong> — Terminology consistency</div>
+        <div><strong>C4</strong> — Context completeness</div>
+        <div><strong>C5</strong> — Text-image balance</div>
+        <div><strong>C6</strong> — Procedural detail</div>
+        <div><strong>C7</strong> — Troubleshooting content</div>
+        <div><strong>C8</strong> — Metadata &amp; discoverability</div>
+      </div>
+      <div style="margin-top:6px; font-size:0.76rem; color:#6c757d;">Scale 1–5 · ≥4.0 Strong · 3.5–3.9 Good · &lt;3.5 Review</div>
+    </details>
     <table class="score-table">
       <thead>
         <tr>
@@ -561,11 +581,11 @@
   </div>
 
   <!-- ── Q&A TEST RESULTS ── -->
-  <p class="section-title">AI Response Testing — Results</p>
+  <p class="section-title">APAI Chat Response Testing — Results</p>
 
   <div style="margin-bottom:24px;">
     <div class="card">
-      <h2>AI Testing — Results Overview (15 of 15 sheets tested)</h2>
+      <h2>APAI Chat Testing — Results Overview (15 of 15 sheets tested)</h2>
       <div style="display:flex; gap:24px; margin-top:14px; flex-wrap:wrap; align-items:center;">
         <div style="text-align:center;">
           <div style="font-size:2.2rem; font-weight:700; color:#28a745;">141</div>
@@ -589,6 +609,46 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <h2>APAI Chat Failure Patterns — 49 failures across 15 runs</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:0.84rem; margin-top:14px;">
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:9px 12px; background:#1F6B75; color:#fff; font-size:0.76rem; letter-spacing:0.4px;">Pattern</th>
+          <th style="text-align:center; padding:9px 12px; background:#1F6B75; color:#fff; font-size:0.76rem; letter-spacing:0.4px;">Runs affected</th>
+          <th style="text-align:center; padding:9px 12px; background:#1F6B75; color:#fff; font-size:0.76rem; letter-spacing:0.4px;">Est. failures</th>
+          <th style="text-align:left; padding:9px 12px; background:#1F6B75; color:#fff; font-size:0.76rem; letter-spacing:0.4px;">Recommended action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; font-weight:600; color:#2c3e50;">Wrong source retrieved</td>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; text-align:center; font-weight:700; color:#721c24;">10</td>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; text-align:center; font-weight:700; color:#1F6B75;">~25</td>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; color:#495057;">Improve doc titles &amp; metadata to reduce retrieval ambiguity</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; font-weight:600; color:#2c3e50;">Answer too generic / missing specifics</td>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; text-align:center; font-weight:700; color:#721c24;">7</td>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; text-align:center; font-weight:700; color:#1F6B75;">~17</td>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; color:#495057;">Add explicit procedural steps and named values to source docs (C6)</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; font-weight:600; color:#2c3e50;">Hallucinated steps / no citation</td>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; text-align:center; font-weight:700; color:#721c24;">2</td>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; text-align:center; font-weight:700; color:#1F6B75;">~5</td>
+          <td style="padding:9px 12px; border-bottom:1px solid #ecf0f1; color:#495057;">Improve RAG retrieval on procedural HOW_TO questions</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+          <td style="padding:9px 12px; font-weight:600; color:#2c3e50;">Unanswered (no content matched)</td>
+          <td style="padding:9px 12px; text-align:center; font-weight:700; color:#721c24;">1</td>
+          <td style="padding:9px 12px; text-align:center; font-weight:700; color:#1F6B75;">~5</td>
+          <td style="padding:9px 12px; color:#495057;">Review chunking strategy for large docs — e.g. ProductionCenter UG</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="card" style="margin-bottom:24px;">
@@ -621,7 +681,7 @@
           <td style="text-align:center"><span class="pill-pass">11</span></td>
           <td style="text-align:center"><span class="pill-fail">1</span></td>
           <td style="text-align:center"><span class="score-pill good">92%</span></td>
-          <td>1 failure: ARP-008 (approver re-approving rejected pages) — AI answered from ProductionCenter UG instead of source document.</td>
+          <td>1 failure: ARP-008 (approver re-approving rejected pages) — APAI Chat answered from ProductionCenter UG instead of source document.</td>
         </tr>
         <tr>
           <td class="run-num">#13</td>
@@ -684,7 +744,7 @@
           <td style="text-align:center"><span class="pill-pass">4</span></td>
           <td style="text-align:center"><span class="pill-fail">1</span></td>
           <td style="text-align:center"><span class="score-pill good">80%</span></td>
-          <td>1 failure: PD-004 (access URL dashboard.eco3.net) — AI described generic browser access, missed the specific URL.</td>
+          <td>1 failure: PD-004 (access URL dashboard.eco3.net) — APAI Chat described generic browser access, missed the specific URL.</td>
         </tr>
         <tr>
           <td class="run-num">#6</td>
@@ -720,7 +780,7 @@
           <td style="text-align:center"><span class="pill-pass">3</span></td>
           <td style="text-align:center"><span class="pill-fail">2</span></td>
           <td style="text-align:center"><span class="score-pill warn">60%</span></td>
-          <td>Q4 failed — AI adjusted curve slope instead of increasing Adjusted Values above Density Values. Q5 failed — AI said "save &amp; apply" instead of "update Parameter Sets". Both lacked source citations.</td>
+          <td>Q4 failed — APAI Chat adjusted curve slope instead of increasing Adjusted Values above Density Values. Q5 failed — APAI Chat said "save &amp; apply" instead of "update Parameter Sets". Both lacked source citations.</td>
         </tr>
         <tr>
           <td class="run-num">#2</td>
@@ -729,7 +789,7 @@
           <td style="text-align:center"><span class="pill-pass">3</span></td>
           <td style="text-align:center"><span class="pill-fail">1</span></td>
           <td style="text-align:center"><span class="score-pill good">75%</span></td>
-          <td>AP-FDA-001 failed — AI described the arrow as fold direction instead of sheet feed direction. Reference document not cited as primary source.</td>
+          <td>AP-FDA-001 failed — APAI Chat described the arrow as fold direction instead of sheet feed direction. Reference document not cited as primary source.</td>
         </tr>
         <tr>
           <td class="run-num">#1</td>
@@ -759,7 +819,7 @@
     </div>
 
     <div class="card">
-      <h2>Task 3 — AI Testing</h2>
+      <h2>Task 3 — APAI Chat Testing</h2>
       <ul class="task-list">
         <li><span class="task-icon">&#9744;</span>Create Q&amp;A sheets for remaining 9 unscored docs (batch 3)</li>
         <li><span class="task-icon">&#9745;</span>Run batch 2 — 11 sheets, 118 q · 95 Pass, 23 Fail (81%) · 2026-06-12</li>
@@ -778,7 +838,7 @@
 
 <footer>
   <p>APAI Chat · ECO3 BV ·
-    <a href="https://github.com/OzenLevent/apai-chat-documents" target="_blank">GitHub Repository</a> ·
+    <a href="https://github.com/OzenLevent/apai-chat-documents" target="_blank">apai-chat-documents ↗</a> ·
     <a href="https://eqap.ac.eco3sw.com" target="_blank">APAI Chat</a>
   </p>
 </footer>
@@ -788,6 +848,47 @@
   const teal2  = '#2eacba';
   const gray   = '#e9ecef';
   const orange = '#e67e22';
+
+  // ── Chart 2a: Donut – readiness scoring progress (4 segments) ──
+  new Chart(document.getElementById('chartDonut1'), {
+    type: 'doughnut',
+    data: {
+      labels: ['≥4.0 Strong', '3.5–3.9 Good', '<3.5 Review', 'Pending'],
+      datasets: [{
+        data: [3, 7, 5, 9],
+        backgroundColor: ['#1F6B75', '#2eacba', '#e67e22', '#e9ecef'],
+        borderWidth: [0, 0, 0, 1],
+        borderColor: ['transparent','transparent','transparent','#ced4da'],
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      cutout: '72%',
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}` }
+      }}
+    }
+  });
+
+  // ── Chart 2b: Donut – AI testing progress (2 segments, all tested) ──
+  new Chart(document.getElementById('chartDonut2'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Pass', 'Fail'],
+      datasets: [{
+        data: [141, 49],
+        backgroundColor: ['#00C000', '#CC0000'],
+        borderWidth: 0,
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      cutout: '72%',
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}` }
+      }}
+    }
+  });
 
   // ── Chart 1: Horizontal bar – avg readiness score per document (color-coded) ──
   new Chart(document.getElementById('chartSamples'), {
@@ -839,46 +940,6 @@
     }
   });
 
-  // ── Chart 2a: Donut – readiness scoring progress (4 segments) ──
-  new Chart(document.getElementById('chartDonut1'), {
-    type: 'doughnut',
-    data: {
-      labels: ['≥4.0 Strong', '3.5–3.9 Good', '<3.5 Review', 'Pending'],
-      datasets: [{
-        data: [3, 7, 5, 9],
-        backgroundColor: ['#1F6B75', '#2eacba', '#e67e22', '#e9ecef'],
-        borderWidth: [0, 0, 0, 1],
-        borderColor: ['transparent','transparent','transparent','#ced4da'],
-        hoverOffset: 4
-      }]
-    },
-    options: {
-      cutout: '72%',
-      plugins: { legend: { display: false }, tooltip: {
-        callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}` }
-      }}
-    }
-  });
-
-  // ── Chart 2b: Donut – AI testing progress (2 segments, all tested) ──
-  new Chart(document.getElementById('chartDonut2'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Pass', 'Fail'],
-      datasets: [{
-        data: [141, 49],
-        backgroundColor: ['#00C000', '#CC0000'],
-        borderWidth: 0,
-        hoverOffset: 4
-      }]
-    },
-    options: {
-      cutout: '72%',
-      plugins: { legend: { display: false }, tooltip: {
-        callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}` }
-      }}
-    }
-  });
 </script>
 
 </body>
